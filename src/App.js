@@ -23,7 +23,7 @@ function App() {
   const getUsers = async (since = "") => {
     try {
       const response = await axios.get(
-        `http://localhost:9000/api/users?since=${since}`
+        `https://back-8g2e.onrender.com/api/users?since=${since}`
       );
       setUsers(response.data.users);
       setNextLink(response.data.nextLink);
@@ -36,7 +36,7 @@ function App() {
   const detailUser = async (username) => {
     try {
       const response = await axios.get(
-        `http://localhost:9000/api/users/${username}`
+        `https://back-8g2e.onrender.com/api/users/${username}`
       );
       // setSelectedUser(response.data);
       detailsUser(response.data);
@@ -49,7 +49,7 @@ function App() {
     try {
       detailUser(username);
       const response = await axios.get(
-        `http://localhost:9000/api/user/repos?username=${username}`
+        `https://back-8g2e.onrender.com/api/user/repos?username=${username}`
       );
       setRepos(response.data);
     } catch (error) {
